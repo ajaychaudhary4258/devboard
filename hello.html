@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevBoard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      background: linear-gradient(135deg, #241044, #6d3cc8, #a96ee8);
+      padding: 40px;
+    }
+
+    .dashboard {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    h1 { font-size: 28px; }
+    header p { opacity: .7; margin-top: 5px; }
+
+    button {
+      border: 0;
+      padding: 11px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #fff;
+      color: #5b2aa8;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .card, .task {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .card strong {
+      display: block;
+      font-size: 26px;
+      margin-top: 8px;
+    }
+
+    .tasks {
+      display: grid;
+      gap: 12px;
+    }
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .task span {
+      font-size: 13px;
+      opacity: .7;
+    }
+
+    .done {
+      color: #b9ffcf;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 20px; }
+      .stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dashboard">
+    <header>
+      <div>
+        <h1>DevBoard</h1>
+        <p>Track your development tasks</p>
+      </div>
+      <button>+ Add Task</button>
+    </header>
+
+    <section class="stats">
+      <div class="card">Total Tasks<strong>12</strong></div>
+      <div class="card">In Progress<strong>5</strong></div>
+      <div class="card">Completed<strong>7</strong></div>
+    </section>
+
+    <div class="tasks">
+      <div class="task">
+        <div><b>Build CI/CD Pipeline</b><br><span>DevOps · High Priority</span></div>
+        <span>In Progress</span>
+      </div>
+
+      <div class="task">
+        <div><b>Fix Login API</b><br><span>Backend · Medium Priority</span></div>
+        <span>In Progress</span>
+      </div>
+
+      <div class="task">
+        <div><b>Update Docker Configuration</b><br><span>DevOps · Low Priority</span></div>
+        <span class="done">✓ Completed</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
